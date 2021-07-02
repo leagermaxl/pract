@@ -1,4 +1,12 @@
 #pragma once
+/**
+* @file pract.cpp
+* @author Любченко М.С., гр. 515А, Завдання 33
+* @date 29.06.2021
+* @brief Практика
+*
+* Програма переводу грошей у текст українською
+*/
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
