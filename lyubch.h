@@ -1,11 +1,11 @@
 #pragma once
 /**
 * @file pract.cpp
-* @author Любченко М.С., гр. 515А, Завдання 33
+* @author Р›СЋР±С‡РµРЅРєРѕ Рњ.РЎ., РіСЂ. 515Рђ, Р—Р°РІРґР°РЅРЅСЏ 33
 * @date 29.06.2021
-* @brief Практика
+* @brief РџСЂР°РєС‚РёРєР°
 *
-* Програма переводу грошей у текст українською
+* РџСЂРѕРіСЂР°РјР° РїРµСЂРµРІРѕРґСѓ РіСЂРѕС€РµР№ Сѓ С‚РµРєСЃС‚ СѓРєСЂР°С—РЅСЃСЊРєРѕСЋ
 */
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -26,3 +26,5 @@ void ten_million(char* str);
 void hundred_million(char* str);
 void grn(char* str);
 void kop(char* str);
+void switchh(char* str);
+void numbers(int num1);
