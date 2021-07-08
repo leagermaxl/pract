@@ -3,7 +3,7 @@
 int k = 0, num, num_g, num_k;
 
 int main() {
-	int num1, y = 1;
+	int num1;
 	char str[200] = "";
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
@@ -18,41 +18,13 @@ int main() {
 	else {
 		num1 = num;
 		num_g = num;
-		while (y) {
-			num1 /= 10;
-			k++;
-			if (num1 == 0)
-				y = 0;
-		}
-		while (k) {
-			switch (k) {
-			case 1: one(str); break;
-			case 2: ten(str); break;
-			case 3: hundred(str); break;
-			case 4: thousand(str); break;
-			case 5: ten_thousand(str); break;
-			case 6: hundred_thousand(str); break;
-			case 7: million(str); break;
-			case 8: ten_million(str); break;
-			case 9: hundred_million(str); break;
-			}
-		}
+		numbers(num1);
+		switchh(str);
 		grn(str);
 		num1 = num_k;
-		y = 1;
-		while (y) {
-			num1 /= 10;
-			k++;
-			if (num1 == 0)
-				y = 0;
-		}
+		numbers(num1);
 		num = num_k;
-		while (k) {
-			switch (k) {
-			case 1: one(str); break;
-			case 2: ten(str); break;
-			}
-		}
+		switchh(str);
 		kop(str);
 	}
 	printf("\n%s\n", str);
