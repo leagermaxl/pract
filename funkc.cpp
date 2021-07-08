@@ -1,4 +1,4 @@
-﻿#include "lyubch.h"
+#include "lyubch.h"
 
 void one(char* str) {
 	int x;
@@ -45,7 +45,7 @@ void hundred(char* str) {
 	else
 		strcat(str, words[num1 - 1]);
 	if (k == 3)
-		k = k - 1;
+		numbers(num);
 	return;
 };
 
@@ -67,7 +67,7 @@ void thousand(char* str) {
 		num = num2;
 	}
 	if (k == 4)
-		k = k - 1;
+		numbers(num);
 	return;
 }
 
@@ -96,7 +96,7 @@ void ten_thousand(char* str) {
 	}
 	num = num2;
 	if (k == 5)
-		k = k - 2;
+		numbers(num);
 	return;
 }
 
@@ -107,12 +107,12 @@ void hundred_thousand(char* str) {
 	num2 = num;
 	num = num1;
 	hundred(str);
-	ten(str);
+	//ten(str);
 	num = num2;
-	num = num % 10000;
+	num = num % 100000;
 	ten_thousand(str);
 	if (k == 6)
-		k = k - 3;
+		numbers(num);
 	return;
 }
 
@@ -136,7 +136,7 @@ void million(char* str) {
 	if (k != 9)
 		num = num2;
 	if (k == 7)
-		k = k - 1;
+		numbers(num);
 	return;
 }
 
@@ -165,7 +165,7 @@ void ten_million(char* str) {
 	}
 	num = num2;
 	if (k == 8)
-		k = k - 2;
+		numbers(num);
 	return;
 }
 
@@ -187,7 +187,7 @@ void hundred_million(char* str) {
 	million(str);
 	num = num % 1000000;
 	if (k == 9)
-		k = k - 3;
+		numbers(num);
 	return;
 }
 
@@ -227,4 +227,32 @@ void kop(char* str) {
 		}
 	}
 	return;
+}
+
+void numbers(int num1) {
+	int y = 1;
+	k = 0;
+	while (y) {
+		num1 /= 10;
+		k++;
+		if (num1 == 0)
+			y = 0;
+	}
+	return;
+}
+
+void switchh(char* str) {
+	while (k) {
+		switch (k) {
+		case 1: one(str); break;
+		case 2: ten(str); break;
+		case 3: hundred(str); break;
+		case 4: thousand(str); break;
+		case 5: ten_thousand(str); break;
+		case 6: hundred_thousand(str); break;
+		case 7: million(str); break;
+		case 8: ten_million(str); break;
+		case 9: hundred_million(str); break;
+		}
+	}
 }
